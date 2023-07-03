@@ -1,0 +1,70 @@
+{
+  "name": "@laplace/parcel-build-bug",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "lint": "eslint ./src/ --ext .js,.jsx --ignore-path .gitignore --fix --max-warnings 0 --no-ignore",
+    "stylelint": "stylelint src/**/*.css --ignore-path .gitignore --fix",
+    "prepare": "husky install"
+  },
+  "targets": {
+    "webapp": {
+      "source": "index.html",
+      "distDir": "./dist",
+      "context": "browser"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "./node_modules/.bin/eslint --ext .js,.jsx --ignore-path .gitignore --fix --max-warnings 0 --no-ignore"
+    ],
+    "*.css": [
+      "./node_modules/.bin/stylelint --ignore-path .gitignore --fix"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.0.1"
+  },
+  "devDependencies": {
+    "@parcel/optimizer-data-url": "2.9.3",
+    "@parcel/packager-raw-url": "2.9.3",
+    "@parcel/transformer-graphql": "2.9.3",
+    "@parcel/transformer-inline-string": "2.9.3",
+    "@parcel/transformer-jsonld": "2.9.3",
+    "@parcel/transformer-svg-react": "2.9.3",
+    "@parcel/transformer-webmanifest": "2.9.3",
+    "@vitejs/plugin-legacy": "^4.0.5",
+    "browserslist": "^4.21.9",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.3",
+    "parcel": "2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "process": "^0.11.10",
+    "stylelint": "^15.9.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-order": "^6.0.3"
+  }
+}
